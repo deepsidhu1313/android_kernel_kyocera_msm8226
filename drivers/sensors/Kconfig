@@ -1,0 +1,36 @@
+#
+# This software is contributed or developed by KYOCERA Corporation.
+# (C) 2015 KYOCERA Corporation
+#
+
+config SENSORS
+	bool "Sensors Class Support"
+	help
+	  This option enables the sensor sysfs class in /sys/class/sensors.
+	  You'll need this to do anything useful with sensorss. If unsure, say N.
+
+config SENSORS_YAS_MAGNETOMETER
+	tristate "Yamaha 3-Axis Magnetmeter"
+	depends on I2C && SYSFS && IIO && IIO_SW_RING && IIO_TRIGGER
+	default y
+	help
+		Say Y here to add support for the Yamaha 3-Axis Magnetometer.
+
+config SENSORS_YAS_ACC_GYRO_6AXIS_SENSOR
+	tristate "Yamaha 6-Axis Accelerometer and Gyroscope sensor"
+	depends on I2C && SYSFS && IIO && IIO_SW_RING && IIO_TRIGGER
+	default y
+	help 
+		Say Y here to add support for the Yamaha 6-Axis Accelerometer and Gyroscope sensor.
+
+config INPUT_SENSOR_PRESSURE
+	tristate "Pressure Sensor Driver"
+	default y
+	help
+		Say Y here to add support for the Pressure sensor.
+
+config INPUT_SENSOR_PROXIMITY
+	tristate "Proximity/Light Sensor Driver"
+	default y
+	help
+		Say Y here to add support Proximity/Light sensor.
