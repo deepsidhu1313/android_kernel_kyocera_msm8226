@@ -34,7 +34,7 @@
 #include <linux/qpnp/qpnp-adc.h>
 #include <linux/platform_device.h>
 
-#include <../power/oem-chg_param.h>
+#include "../power/oem-chg_param.h"
 /* Min ADC code represets 0V */
 #define QPNP_VADC_MIN_ADC_CODE			0x6000
 /* Max ADC code represents full-scale range of 1.8V */

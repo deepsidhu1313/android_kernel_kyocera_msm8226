@@ -112,7 +112,7 @@ static long kc_ts_ioctl(struct file *file, unsigned int cmd,
 						unsigned long arg)
 {
 	struct kc_ts_data *ts = (struct kc_ts_data *)file->private_data;
-	struct device *dev;
+	struct device *dev =(struct device *)file->private_data; //to avoid -Wunintialised error * to do - debugging or consequences of this assignment
 	long err = 0;
 	int ret;
 	u8 *system_info = NULL;
